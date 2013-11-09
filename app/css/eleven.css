@@ -1,3 +1,96 @@
 /* Project11 css stylesheet */
+body {margin: 0 10px 0 10px !important}
 
+.images-n-dots {
+  width: 30%;
+}
 
+.images { 
+	width: 100%;
+  height:auto;
+  text-align: center;
+}
+
+.dots {
+  list-style: none;
+	text-align: center;
+  width:auto;
+  margin-top: -30px;
+}
+
+.dot1, .dot2, .dot3, .dot4, .dot5, .dot6 {
+    display: inline-block;
+    -webkit-animation: rot 2s linear infinite;
+    animation: rot 2s linear infinite;
+}
+
+.dot2 {
+    -webkit-animation-delay: -0.2s;
+    animation-delay: -1s;
+}
+.dot3 {  
+    -webkit-animation-delay: -0.4s;
+    animation-delay: -2s;
+}
+.dot4 {
+    -webkit-animation-delay: -0.6s;
+    animation-delay: -3s;
+}
+
+.dot5 {
+    -webkit-animation-delay: -0.8s;
+    animation-delay: -4s;
+}
+
+.dot6 {
+    -webkit-animation-delay: -1s;
+    animation-delay: -5s;
+}
+
+.dot-shine {
+    display: block;
+    background-color: grey;
+    height: 10px;
+    width: 20px;
+}
+
+@-webkit-keyframes rot {
+    0% {-webkit-transform:;opacity: 1;}
+   17% {-webkit-transform:;opacity: 0.66;}
+   33% {-webkit-transform:;opacity: 0.33;}
+   50% {-webkit-transform:;opacity: 0.1;}
+  66% {-webkit-transform:;opacity: 0.33;}
+  83% {-webkit-transform:;opacity: 0.6;}
+  100% {-webkit-transform:;opacity: 1;}
+}
+
+/* ANIMATIONS */
+
+/* 1: για να δουλεψει δεν πρέπει να εχει καθορισθεί το left στο style*/
+.start {width:30%; position: relative; display: inline-block}
+
+.anim-if-1.ng-enter {transition: 1.5s ease-out all;left: 30px;opacity: 0; font-size: 8px}
+.anim-if-1.ng-enter.ng-enter-active, .anim-if-1 {left: 500px;opacity: 1; font-size: 18px;}
+
+.anim-if-1.ng-leave {transition: 1.5s ease-out all;left: 500px;opacity: 1; font-size: 18px;}
+.anim-if-1.ng-leave.ng-leave-active {left: 30px;opacity: 0; font-size: 8px;}
+
+/* 2: */
+.start2 {width:30%; position: relative; display: inline-block; font-size: 8px}
+
+.animif-add {transition: 1.5s ease-out all;left: 30px;font-size: 8px}
+.animif-add-active, .animif {left: 500px; font-size: 18px;}
+
+.animif-remove {transition: 1.5s ease-out all;left: 500px;font-size: 18px;}
+.animif-remove-active {left: 30px;font-size: 8px;}
+
+/* 3: */
+.div31{width: 90%;}
+.div32{list-style: none; text-align: center;}
+.div33{width: 100px; display: inline-block; margin: 10px}
+
+.anim3.ng-enter {transition: 0.65s ease-out all; opacity: 0; width: 0px;}
+.anim3.ng-enter.ng-enter-active {opacity: 1; width: 100px;}
+
+.anim3.ng-leave {transition: 0.65s ease-out all; opacity: 1;}
+.anim3.ng-leave.ng-leave-active {opacity: 0; width: 0px; margin: 0px;}

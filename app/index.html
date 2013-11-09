@@ -3,24 +3,143 @@
 <head>
     <meta charset="utf-8">
     <title>Project11</title>
+    <link href="/images/11.ico" rel="icon" type="image/x-icon"/>
     <link rel="stylesheet" href="css/eleven.css"/>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
 </head>
 
-<body>
-  <h1>This is the Project11</h1>
-  
-  <ul class="menu">
-    <li><a href="#/view1">view1</a></li>
-    <li><a href="#/view2">view2</a></li>
-  </ul>
+<body ng-controller="11Ctrl">
+  <h1>Project11</h1>
+  <hr>
 
-  <!-- JS references -->
-  <script src="lib/angular/angular.js"></script>
+  <!-- textarea -->
+  <h1><small>textarea</small></h1> 
+  <textarea ng-model="myTextArea" cols="10" rows="2">koko</textarea>
+  <br>This is what you write inside: {{myTextArea}}
+  <hr>
+
+  <!-- dots animation in front of image -->
+  <h1><small>ng-repeat images and dots animation</small></h1>
+  <div class="images-n-dots">
+    <img class="images img-rounded" ng-src="images/{{imageNumber}}.jpg"/>
+    <ul class="dots">
+      <li ng-repeat="dot in dots" class="dot{{dot}}"><b class="dot-shine"></b></li>
+    </ul>
+  </div>
+  <hr>
+
+  <!-- buttons -->
+  <h1><small>Buttons</small></h1>
+  <button class="btn">btn</button>
+  <button class="btn btn-large">btn-large</button>
+  <button class="btn btn-small">btn-small</button>
+  <button class="btn btn-mini">btn-mini</button>
+  <button class="btn btn-link">btn-link</button>
+  <button class="btn btn-primary">btn-primary</button>
+  <button class="btn btn-warning">btn-warning</button>
+  <button class="btn btn-danger">btn-danger</button>
+  <button class="btn btn-success">btn-success</button>
+  <button class="btn btn-inverse">btn-inverse</button>
+  <button class="btn btn-info">btn-info</button>
+  <hr>
+
+  <!-- Alerts -->
+  <h1><small>Alert messages</small></h1>
+  <div class="alert"><h5>An h5 alert message</h5></div>
+  <div class="alert">An alert message<div class="cclose">with cclose class</div></div>
+  <div class="alert alert-success"><h5>An h5 alert-success message</h5></div>
+  <div class="alert alert-danger">An alert-danger message</div>
+  <div class="alert alert-error">An alert-error message</div>
+  <div class="alert alert-info">An alert-info message</div>
+  <hr>
+
+  <!-- html code -->
+  <h1><small>html code</small></h1>
+  <pre><code>
+    &lt;div ng-controller="AlertDemoCtrl"&gt;
+      &lt;alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)"&gt;{{alert.msg}}&lt;/alert&gt;
+      &lt;button class='btn' ng-click="addAlert()"&gt;Add Alert&lt;/button&gt;
+    &lt;/div&gt;
+  </code></pre>
+  <hr>
+
+  <!-- Tooltips -->
+  <h1><small>Tootips</small></h1>
+  <p>
+    focus trigger: 
+    <input type="text" value="Κάνε κλικ εδώ μέσα..."
+      tooltip="Ωραία! Κάνε τώρα κλικ και έξω..." 
+      tooltip-trigger="focus"
+      tooltip-placement="top" /> <!--right,bottom,left and default -->
+  </p>
+  <hr>
+
+  <!-- Popovers -->
+  <h1><small>Popovers</small></h1>
+  <p>
+    <div>
+      <h5>Dynamic popover with placement</h5>
+      <div>Name of the button: 
+        <input type="text" ng-model="dynamicPopoverText" placeholder="button name in here">
+      </div>
+      <div>Content of the popover popup: 
+        <input type="text" ng-model="dynamicPopover" placeholder="content in here">
+      </div>
+      <div>Title of the popover popup: 
+        <input type="text" ng-model="dynamicPopoverTitle" placeholder="title in here">
+      </div>
+      <div>
+        <button popover-placement="right" popover="{{dynamicPopover}}" popover-title="{{dynamicPopoverTitle}}" class="btn">{{dynamicPopoverText}}
+        </button>
+      </div>
+    </div>
+  </p>
+  <hr>
+
+  <!-- Animations -->
+  <h1><small>Animations</small></h1>
+  <!-- 1 -->
+  <h5>Anim based on ng-if (enter/leave)</h5>
+  <button class="btn btn-info" ng-click="whenItsTrue = !whenItsTrue">anim-if-1 start (ease-out)</button>
+  <div class="start anim-if-1" ng-if="whenItsTrue">
+    Some text here to see what's look like
+  </div>
+  <br>
+  <br>
+
+  <!-- 2 -->
+  <h5>Anim based on .class-add (add/remove)</h5>
+  <button class="btn btn-info" ng-click="whenItsTrue2 = !whenItsTrue2">anim-if-2 start (ease-out)</button>
+  <div class="start2" ng-class="{animif: whenItsTrue2}">
+    Some text here to see what's look like
+  </div>
+  <br>
+  <br>
+
+  <!-- 3 -->
+  <h5>Anim based on .ng-repeat (enter/leave/move)</h5>
+  <button class="btn btn-info" ng-click="insertPic()">Πρόσθεσε μία φωτο</button>
+  <button class="btn btn-info" ng-click="removePic()">Διέγραψε μία φωτο</button>
+  <div class="div31">
+    <ul class="div32">
+      <li ng-repeat="num in imageArray" class="div33 anim3">    
+        <img class="images img-rounded" ng-src="images/{{num}}.jpg"/>
+      </li>
+    </ul>
+  </div>
+
+  <br>
+  <br>
+  <hr>
+
+  <!-- js imports -->
+  <script src="lib/angular.js"></script>
+  <script src="lib/ui-bootstrap.js"></script>
+  <script src="lib/angular-animate.js"></script>
   <script src="js/eleven.js"></script>
   <script src="js/services.js"></script>
   <script src="js/controllers.js"></script>
   <script src="js/filters.js"></script>
   <script src="js/directives.js"></script>
-
 </body>
 </html>
