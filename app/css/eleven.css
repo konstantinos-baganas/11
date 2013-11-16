@@ -88,10 +88,32 @@ body {margin: 0 10px 0 10px !important}
 /* 3: */
 .div31{width: 90%;}
 .div32{list-style: none; text-align: center;}
-.div33{width: 100px; display: inline-block; margin: 10px}
+.div33{width: 100px; display: inline-block; margin: 10px;}
 
-.anim3.ng-enter {transition: all 0.65s ease-out; opacity: 0; width: 0px;}
-.anim3.ng-enter.ng-enter-active {opacity: 1; width: 100px;}
+.anim3.ng-enter {transition: 0.65s ease-out; opacity: 0; width: 0px;}
+.anim3.ng-enter.ng-enter-active {opacity: 1; width: 100px; -webkit-transform: rotate(360deg);}
 
-.anim3.ng-leave {transition: all 0.65s ease-out; opacity: 1;}
+.anim3.ng-leave {transition: 0.65s ease-out; opacity: 1;}
 .anim3.ng-leave.ng-leave-active {opacity: 0; width: 0px; margin: 0px;}
+
+
+/* OVERLAYS */
+
+/*1. look at https://gist.github.com/jordandobson/715124*/
+.figure {
+  position:               relative;
+  display:                block;
+  width:                  300px;
+  height:                 300px;
+  margin-bottom:          2em;
+  border:                 2px solid green;
+  -webkit-box-shadow:     1px 3px 2px red;
+  outline:                1px solid blue;  
+}
+
+/* -webkit-radial-gradient(center center, circle contain, 
+  black 0%, blue 25%, green 40%, red 60%, purple 80%, white 100%); 
+des http://www.impressivewebs.com/css3-radial-gradient-syntax/*/
+.figure img:hover {
+  -webkit-mask-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 175, from(rgba(255, 255, 255,0.9)), to(rgba(0,0,0,0.1)));
+}
