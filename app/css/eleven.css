@@ -129,3 +129,20 @@ des http://www.impressivewebs.com/css3-radial-gradient-syntax/*/
   outline: 1px solid rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.5);
 }
+
+/* video */
+
+.videoContainer { /*1280x720, 640X480/360, 1024x576*/
+    max-width: 333px;
+    overflow:hidden;
+    display:block;
+    height: 250px !important;
+    margin: 20px 30px 30px 100px;
+    outline: 2px solid red;
+}
+
+.myVideo { /*1280x720, 640X480/360, 1024x576*/
+  position: relative;
+  left: -26%;
+  width: 134%;
+}
