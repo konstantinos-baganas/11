@@ -147,12 +147,23 @@
 
     <!-- Video -->
   <h1><small>Video tag</small></h1>
-  <h5>Do a scaling also to a video</h5>
+  <h5>The original video limited to 800px width</h5>
+
+  <div class="videoContainerOriginal">
+    <video autoplay class="myVideoOriginal" controls>
+      <source src="videos/3.mp4" type="video/mp4">
+    </video>
+  </div>
+  <br>
+  <span>The actual size of the video is: {{videoWidth}}x{{videoHeight}} px</span>
+  <br>
+  <h5>The cropped video 4:3</h5>
   <div class="videoContainer">
     <video autoplay class="myVideo">
       <source src="videos/3.mp4" type="video/mp4">
-    </video
+    </video>
   </div>
+
   <hr>
 
   <!-- js imports -->

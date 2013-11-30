@@ -37,4 +37,9 @@ angular.module('eleven.controllers', [])
                 console.log($scope.imageArray);
     };
 
+////////// VIDEOS //////////
+
+    $scope.videoWidth = '';
+    $scope.videoHeight = '';
+
   }]);
